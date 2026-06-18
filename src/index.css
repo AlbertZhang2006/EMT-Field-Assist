@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F7F9FB;
+  --color-surface: #FFFFFF;
+  --color-primary: #12324A;
+  --color-primary-action: #2563EB;
+  --color-primary-action-hover: #1D4ED8;
+  --color-clinical: #0F766E;
+  --color-text-primary: #111827;
+  --color-text-secondary: #5B6675;
+  --color-text-muted: #8896A6;
+  --color-border: #D8DEE8;
+  --color-border-light: #E8EDF2;
+  --color-warning: #B45309;
+  --color-warning-bg: #FEF3C7;
+  --color-critical: #B91C1C;
+  --color-critical-bg: #FEE2E2;
+  --color-success: #047857;
+  --color-success-bg: #D1FAE5;
+  --color-protocol-bg: #EFF6FF;
+  --color-protocol-text: #1E40AF;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Animations --- */
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-slide {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes recording-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.45; transform: scale(1.35); }
+}
+
+@keyframes mic-ring-expand {
+  0%   { transform: scale(1); opacity: var(--ring-opacity, 0.3); }
+  100% { transform: scale(var(--ring-scale, 1.5)); opacity: 0; }
+}
+
+@keyframes field-flash {
+  0%   { background-color: var(--color-protocol-bg); }
+  100% { background-color: transparent; }
+}
+
+.anim-fade-in-up {
+  animation: fade-in-up 200ms ease-out both;
+}
+
+.anim-fade-in-slide {
+  animation: fade-in-slide 180ms ease-out both;
+}
+
+.anim-recording-pulse {
+  animation: recording-pulse 2.2s ease-in-out infinite;
+}
+
+.anim-field-flash {
+  animation: field-flash 500ms ease-out both;
+}
+
+.mic-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid var(--color-primary-action);
+  pointer-events: none;
+  --ring-opacity: 0.3;
+  --ring-scale: 1.55;
+  animation: mic-ring-expand 2.6s ease-out infinite;
+}
+.mic-ring-idle {
+  --ring-opacity: 0.12;
+  --ring-scale: 1.35;
+  animation-duration: 3.4s;
+}
+
+/* --- Reusable button press --- */
+
+.btn-press {
+  transition: transform 100ms ease-out, opacity 100ms ease-out;
+}
+.btn-press:active {
+  transform: scale(0.95);
+  opacity: 0.85;
+}
+
+.btn-press-subtle {
+  transition: transform 120ms ease-out, opacity 120ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.btn-press-subtle:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-in-up,
+  .anim-fade-in-slide,
+  .anim-recording-pulse,
+  .anim-field-flash,
+  .mic-ring {
+    animation: none !important;
+  }
+  .btn-press:active,
+  .btn-press-subtle:active {
+    transform: none !important;
+  }
+}

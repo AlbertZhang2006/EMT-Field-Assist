@@ -1,0 +1,19 @@
+{
+  "name": "emt-app-server",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "start": "node --import tsx index.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^24.12.3",
+    "tsx": "^4.21.4",
+    "typescript": "~6.0.2"
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "regionName": "Demo EMS Region",
+  "version": "1.0.0",
+  "effectiveDate": "2026-01-01",
+  "protocols": [
+    {
+      "id": "chest-pain",
+      "name": "Chest Pain / ACS",
+      "category": "Cardiac",
+      "triggerKeywords": ["chest pain", "chest tightness", "substernal", "crushing", "pressure in chest", "angina", "heart attack", "mi", "acs"],
+      "inclusionCriteria": ["Chest pain or discomfort", "Suspected cardiac origin"],
+      "exclusionCriteria": ["Obvious traumatic cause"],
+      "assessmentItems": [
+        "OPQRST characterization",
+        "12-lead ECG",
+        "SpO2",
+        "Blood pressure both arms if dissection suspected",
+        "Lung sounds",
+        "Skin signs (diaphoresis, pallor, cyanosis)"
+      ],
+      "suggestedActions": [
+        "Consider 12-lead ECG if available per protocol.",
+        "Consider aspirin 324 mg PO if no contraindications — verify per local protocol.",
+        "Consider IV access and normal saline TKO.",
+        "Consider nitroglycerin if SBP > 100 — verify per local protocol and medical direction.",
+        "Monitor SpO2; consider O2 if < 94%.",
+        "Obtain OPQRST and SAMPLE history."
+      ],
+      "redFlags": [
+        "SBP < 90 or signs of cardiogenic shock — contact medical direction immediately.",
+        "New ST elevation on 12-lead — consider STEMI alert per regional protocol.",
+        "Tearing pain radiating to back — consider aortic dissection, avoid anticoagulants."
+      ],
+      "medicationNotes": [
+        "Aspirin 324 mg PO — verify no allergy, no active GI bleed.",
+        "Nitroglycerin 0.4 mg SL — verify SBP > 100, no recent PDE5 inhibitor use. Contact medical direction if required.",
+        "Consider fentanyl for pain management — verify per local protocol and medical direction."
+      ],
+      "medicalDirectionRequired": [
+        "Nitroglycerin administration if SBP borderline",
+        "STEMI alert activation",
+        "Pain management beyond aspirin"
+      ],
+      "radioReportNeeds": [
+        "Age, sex",
+        "Chief complaint and onset time",
+        "Pain description (OPQRST)",
+        "Vitals with trending",
+        "12-lead interpretation if obtained",
+        "Treatments given and response",
+        "Allergies and medications",
+        "ETA"
+      ],
+      "pcrDocumentationNeeds": [
+        "Detailed OPQRST",
+        "SAMPLE history",
+        "Serial vitals (minimum two sets)",
+        "All interventions with timestamps",
+        "12-lead findings",
+        "Patient response to each treatment",
+        "Transport decision rationale"
+      ],
+      "disclaimer": "Advisory guidance only. Verify all actions per local chest pain/ACS protocol. Contact medical direction as required."
+    },
+    {
+      "id": "respiratory-distress",
+      "name": "Respiratory Distress",
+      "category": "Respiratory",
+      "triggerKeywords": ["shortness of breath", "dyspnea", "difficulty breathing", "can't breathe", "wheezing", "asthma", "copd", "respiratory distress", "breathing problem"],
+      "inclusionCriteria": ["Dyspnea or respiratory distress", "Abnormal breath sounds", "SpO2 < 94%"],
+      "exclusionCriteria": [],
+      "assessmentItems": [
+        "SpO2 and respiratory rate",
+        "Lung sounds bilaterally",
+        "Accessory muscle use",
+        "Ability to speak in full sentences",
+        "Tripod positioning or orthopnea",
+        "Pedal edema or JVD"
+      ],
+      "suggestedActions": [
+        "Consider O2 to maintain SpO2 > 94% — verify per local protocol.",
+        "Consider nebulized albuterol for bronchospasm — verify per local protocol.",
+        "Consider CPAP if available and indicated — verify per local protocol.",
+        "Position of comfort; consider sitting upright.",
+        "Establish IV access if condition is severe.",
+        "Consider epinephrine if anaphylaxis suspected — verify per local protocol."
+      ],
+      "redFlags": [
+        "SpO2 < 90% despite O2 — consider advanced airway, contact medical direction.",
+        "Silent chest with severe distress — impending respiratory failure.",
+        "Altered mental status with respiratory distress — immediate intervention needed."
+      ],
+      "medicationNotes": [
+        "Albuterol 2.5 mg nebulized — verify per local protocol.",
+        "Epinephrine 0.3 mg IM for anaphylaxis only — verify per local protocol."
+      ],
+      "medicalDirectionRequired": [
+        "CPAP initiation",
+        "Epinephrine for non-anaphylaxis respiratory distress",
+        "Advanced airway management"
+      ],
+      "radioReportNeeds": [
+        "Age, sex",
+        "Chief complaint and onset",
+        "SpO2 and respiratory rate",
+        "Lung sounds",
+        "Treatments given and response",
+        "Relevant history (asthma, COPD, CHF)",
+        "ETA"
+      ],
+      "pcrDocumentationNeeds": [
+        "Onset and progression",
+        "Lung sounds before and after treatment",
+        "Serial SpO2 and respiratory rate",
+        "All medications administered with times",
+        "Patient response to each intervention",
+        "SAMPLE history"
+      ],
+      "disclaimer": "Advisory guidance only. Verify all actions per local respiratory distress protocol. Contact medical direction as required."
+    },
+    {
+      "id": "altered-mental-status",
+      "name": "Altered Mental Status",
+      "category": "Neurological",
+      "triggerKeywords": ["altered mental status", "confused", "unresponsive", "unconscious", "lethargic", "not alert", "ams", "passed out", "syncope", "fainted", "seizure", "postictal"],
+      "inclusionCriteria": ["GCS < 15", "Acute change in mental status", "Loss of consciousness"],
+      "exclusionCriteria": [],
+      "assessmentItems": [
+        "GCS score",
+        "Blood glucose level",
+        "Pupil size and reactivity",
+        "Onset / last known normal time",
+        "Signs of trauma",
+        "Medication bottles or paraphernalia on scene"
+      ],
+      "suggestedActions": [
+        "Consider blood glucose check — treat hypoglycemia per local protocol.",
+        "Consider naloxone if opioid overdose suspected — verify per local protocol.",
+        "Protect airway; consider recovery position if no trauma suspected.",
+        "Consider stroke scale (Cincinnati or similar) — verify per local protocol.",
+        "Note last known normal time for potential stroke.",
+        "Establish IV access."
+      ],
+      "redFlags": [
+        "GCS ≤ 8 — consider advanced airway management, contact medical direction.",
+        "Blood glucose < 60 with AMS — administer dextrose per protocol.",
+        "Unilateral findings (facial droop, arm drift) — activate stroke alert per regional protocol.",
+        "Pinpoint pupils with respiratory depression — consider naloxone."
+      ],
+      "medicationNotes": [
+        "Dextrose D10 or D50 for confirmed hypoglycemia — verify per local protocol.",
+        "Naloxone 2 mg IN or 0.4 mg IV — titrate to respiratory effort, not full alertness. Verify per local protocol."
+      ],
+      "medicalDirectionRequired": [
+        "Advanced airway management",
+        "Seizure management beyond benzodiazepines",
+        "Repeated naloxone doses"
+      ],
+      "radioReportNeeds": [
+        "Age, sex",
+        "GCS and mental status description",
+        "Blood glucose",
+        "Onset or last known normal",
+        "Pupil findings",
+        "Medications found on scene",
+        "Treatments given and response",
+        "ETA"
+      ],
+      "pcrDocumentationNeeds": [
+        "Detailed GCS with components (E/V/M)",
+        "Blood glucose with time",
+        "Pupil findings",
+        "Last known normal time",
+        "Scene findings (medications, paraphernalia)",
+        "Serial neuro assessments",
+        "All interventions with timestamps"
+      ],
+      "disclaimer": "Advisory guidance only. Verify all actions per local altered mental status protocol. Contact medical direction as required."
+    },
+    {
+      "id": "stroke",
+      "name": "Stroke / CVA",
+      "category": "Neurological",
+      "triggerKeywords": ["stroke", "cva", "facial droop", "arm drift", "slurred speech", "aphasia", "one sided weakness", "hemiparesis", "hemiplegia"],
+      "inclusionCriteria": ["Acute neurological deficit", "Positive stroke scale findings"],
+      "exclusionCriteria": ["Confirmed hypoglycemia as cause"],
+      "assessmentItems": [
+        "Cincinnati Stroke Scale (or local equivalent)",
+        "Last known normal time",
+        "Blood glucose",
+        "Blood pressure",
+        "GCS",
+        "Pupil response"
+      ],
+      "suggestedActions": [
+        "Consider stroke scale assessment (Cincinnati or similar) — verify per local protocol.",
+        "Document last known normal time precisely.",
+        "Consider stroke alert activation per regional protocol.",
+        "Consider blood glucose check — rule out hypoglycemia.",
+        "Consider transport to nearest stroke center — verify per local protocol.",
+        "Do not lower blood pressure unless directed by medical control."
+      ],
+      "redFlags": [
+        "Last known normal < 4.5 hours — time-critical, expedite transport to stroke center.",
+        "Rapidly declining GCS — consider advanced airway, contact medical direction.",
+        "Seizure activity — manage airway and protect patient, contact medical direction.",
+        "SBP > 220 — contact medical direction before treating."
+      ],
+      "medicationNotes": [
+        "No anticoagulants or antiplatelets unless directed by medical control.",
+        "Blood pressure management only per medical direction."
+      ],
+      "medicalDirectionRequired": [
+        "Stroke alert activation",
+        "Blood pressure management",
+        "Destination decision if multiple stroke centers available"
+      ],
+      "radioReportNeeds": [
+        "Age, sex",
+        "Stroke scale findings",
+        "Last known normal time (exact)",
+        "Blood glucose",
+        "Blood pressure",
+        "GCS",
+        "Anticoagulant use",
+        "ETA to stroke center"
+      ],
+      "pcrDocumentationNeeds": [
+        "Stroke scale with each component documented",
+        "Exact last known normal time and source",
+        "Serial neuro checks",
+        "Blood glucose",
+        "Serial vitals",
+        "Time of stroke alert activation",
+        "Anticoagulant and medication history"
+      ],
+      "disclaimer": "Advisory guidance only. Verify all actions per local stroke protocol. Contact medical direction as required. Time-critical condition — minimize scene time."
+    },
+    {
+      "id": "trauma",
+      "name": "Trauma / Injury",
+      "category": "Trauma",
+      "triggerKeywords": ["trauma", "fall", "fell", "accident", "mva", "mvc", "crash", "collision", "hit by", "stabbed", "gunshot", "gsw", "fracture", "bleeding", "laceration", "wound", "injury"],
+      "inclusionCriteria": ["Traumatic mechanism of injury", "Visible injury", "Significant fall or MVC"],
+      "exclusionCriteria": [],
+      "assessmentItems": [
+        "Mechanism of injury",
+        "Primary survey (ABCDE)",
+        "GCS",
+        "Hemorrhage control assessment",
+        "Spinal motion restriction consideration",
+        "Secondary survey (head-to-toe)"
+      ],
+      "suggestedActions": [
+        "Consider primary survey: ABCDE — address life threats first.",
+        "Consider direct pressure for hemorrhage control; consider tourniquet for extremity if needed — verify per local protocol.",
+        "Consider spinal motion restriction if mechanism suggests — verify per local protocol.",
+        "Consider IV access with normal saline; titrate to SBP > 90.",
+        "Consider rapid transport if trauma center criteria met — verify per local protocol.",
+        "Expose and examine — check for hidden injuries."
+      ],
+      "redFlags": [
+        "Uncontrolled hemorrhage — apply tourniquet, contact medical direction.",
+        "Signs of tension pneumothorax (absent breath sounds, JVD, hypotension) — consider needle decompression per protocol.",
+        "GCS < 9 with trauma — manage airway, consider trauma center.",
+        "Pelvic instability — apply binder, limit movement, expedite transport."
+      ],
+      "medicationNotes": [
+        "Normal saline — titrate to SBP > 90, avoid over-resuscitation. Verify per local protocol.",
+        "Consider TXA for significant hemorrhage within 3 hours of injury — verify per local protocol and medical direction."
+      ],
+      "medicalDirectionRequired": [
+        "Needle decompression",
+        "TXA administration",
+        "Trauma center bypass decisions",
+        "Tourniquet application to non-extremity"
+      ],
+      "radioReportNeeds": [
+        "Age, sex",
+        "Mechanism of injury",
+        "Injuries found",
+        "GCS",
+        "Vitals with trending",
+        "Hemorrhage control measures",
+        "Spinal motion restriction status",
+        "Treatments given and response",
+        "ETA to trauma center"
+      ],
+      "pcrDocumentationNeeds": [
+        "Detailed mechanism of injury",
+        "Primary and secondary survey findings",
+        "GCS with components",
+        "All hemorrhage control measures with times",
+        "Serial vitals (minimum two sets)",
+        "Spinal motion restriction decision rationale",
+        "All interventions with timestamps",
+        "Transport decision rationale"
+      ],
+      "disclaimer": "Advisory guidance only. Verify all actions per local trauma protocol. Contact medical direction as required. Consider trauma center criteria."
+    }
+  ]
+}
