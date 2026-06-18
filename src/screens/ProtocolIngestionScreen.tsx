@@ -7,7 +7,6 @@ import {
   scaffoldFromText,
   validateRegion,
   saveCustomRegion,
-  getCustomRegions,
   deleteCustomRegion,
   type ValidationResult,
 } from '../services/protocolIngestion';
@@ -22,7 +21,7 @@ export default function ProtocolIngestionScreen() {
   const [regionName, setRegionName] = useState('');
   const [result, setResult] = useState<{ region: ProtocolRegion | null; validation: ValidationResult } | null>(null);
   const [saved, setSaved] = useState(false);
-  const [customRegions, setCustomRegions] = useState(() => Object.keys(getCustomRegions()));
+  const [, setRegionVersion] = useState(0);
 
   function handleParse() {
     setSaved(false);
@@ -42,12 +41,12 @@ export default function ProtocolIngestionScreen() {
     saveCustomRegion(id, result.region);
     setActiveRegion(id);
     setSaved(true);
-    setCustomRegions(Object.keys(getCustomRegions()));
+    setRegionVersion(v => v + 1);
   }
 
   function handleDelete(id: string) {
     deleteCustomRegion(id);
-    setCustomRegions(Object.keys(getCustomRegions()));
+    setRegionVersion(v => v + 1);
   }
 
   function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {

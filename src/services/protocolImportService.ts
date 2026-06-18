@@ -29,9 +29,11 @@ export interface ImportPreview {
 }
 
 export class ImportError extends Error {
-  constructor(message: string, public readonly userMessage: string) {
+  readonly userMessage: string;
+  constructor(message: string, userMessage: string) {
     super(message);
     this.name = 'ImportError';
+    this.userMessage = userMessage;
   }
 }
 

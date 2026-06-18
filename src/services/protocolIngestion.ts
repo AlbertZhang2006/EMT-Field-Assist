@@ -1,4 +1,4 @@
-import type { Protocol, ProtocolSection, ProtocolRegion, ImportedProtocol } from '../types/index';
+import type { ProtocolSection, ProtocolRegion, ImportedProtocol } from '../types/index';
 
 const CUSTOM_REGIONS_KEY = 'emt-custom-regions';
 
